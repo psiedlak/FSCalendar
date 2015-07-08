@@ -14,7 +14,7 @@
 
 #import "FSCalendarDynamicHeader.h"
 
-#define kDefaultHeaderHeight 40
+#define kDefaultHeaderHeight 30
 #define kWeekHeight roundf(self.fs_height/12)
 
 @interface FSCalendar (DataSourceAndDelegate)
