@@ -38,6 +38,7 @@
         _weekdayFont      = [UIFont systemFontOfSize:15];
         _headerTitleFont  = [UIFont systemFontOfSize:15];
         _headerTitleColor = kBlueText;
+		_headerBackgroundColor = [UIColor clearColor];
         _headerDateFormat = @"MMMM yyyy";
         _headerMinimumDissolvedAlpha = 0.2;
         _weekdayTextColor = kBlueText;
@@ -322,6 +323,16 @@
         [_calendar.header.collectionView reloadData];
     }
 }
+
+- (void)setHeaderBackgroundColor:(UIColor *)color
+{
+	if (![_headerBackgroundColor isEqual:color]) {
+		_headerBackgroundColor = color;
+		[_calendar.header performSelector:@selector(setNeedsDisplay)];
+	}
+}
+
+
 - (void)setAutoAdjustTitleSize:(BOOL)autoAdjustTitleSize
 {
     if (_autoAdjustTitleSize != autoAdjustTitleSize) {

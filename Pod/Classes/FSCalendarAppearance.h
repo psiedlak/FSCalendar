@@ -27,6 +27,7 @@ typedef NS_OPTIONS(NSInteger, FSCalendarCellStyle) {
 @property (strong, nonatomic) UIColor  *weekdayTextColor;
 
 @property (strong, nonatomic) UIColor  *headerTitleColor;
+@property (strong, nonatomic) UIColor  *headerBackgroundColor;
 @property (strong, nonatomic) NSString *headerDateFormat;
 @property (strong, nonatomic) UIFont   *headerTitleFont;
 @property (assign, nonatomic) CGFloat  headerMinimumDissolvedAlpha;

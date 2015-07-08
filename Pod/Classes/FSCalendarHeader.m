@@ -61,7 +61,7 @@
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:collectionViewFlowLayout];
     collectionView.scrollEnabled = NO;
     collectionView.userInteractionEnabled = NO;
-    collectionView.backgroundColor = [UIColor clearColor];
+	
     collectionView.dataSource = self;
     collectionView.delegate = self;
     collectionView.contentInset = UIEdgeInsetsZero;
@@ -76,8 +76,10 @@
     [super layoutSubviews];
     _collectionView.frame = CGRectMake(0, self.fs_height*0.1, self.fs_width, self.fs_height*0.9);
     _collectionView.contentInset = UIEdgeInsetsZero;
+	_collectionView.backgroundColor = _appearance.headerBackgroundColor; // call this elsewhere
     _collectionViewFlowLayout.itemSize = CGSizeMake(_collectionView.fs_width * 0.5,
                                                     _collectionView.fs_height);
+
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
