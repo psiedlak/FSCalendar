@@ -16,6 +16,7 @@
 
 #define kDefaultHeaderHeight 30
 #define kWeekHeight roundf(self.fs_height/12)
+#define kTopBottomPadding 20
 
 @interface FSCalendar (DataSourceAndDelegate)
 
@@ -184,7 +185,7 @@
         _header.frame = CGRectMake(0, 0, self.fs_width, kDefaultHeaderHeight);
     }
     
-    _collectionView.frame = CGRectMake(0, kWeekHeight+_header.fs_height, self.fs_width, self.fs_height-kWeekHeight-_header.fs_height);
+    _collectionView.frame = CGRectMake(0, kWeekHeight+_header.fs_height+kTopBottomPadding, self.fs_width, self.fs_height-kWeekHeight-_header.fs_height-2*kTopBottomPadding);
     _collectionView.contentInset = UIEdgeInsetsZero;
     _collectionViewFlowLayout.itemSize = CGSizeMake(
                                                     _collectionView.fs_width/7-(_flow == FSCalendarFlowVertical)*0.1,
@@ -197,7 +198,7 @@
     [_weekdays enumerateObjectsUsingBlock:^(UILabel *weekdayLabel, NSUInteger idx, BOOL *stop) {
         NSUInteger absoluteIndex = ((idx-(_firstWeekday-1))+7)%7;
         weekdayLabel.frame = CGRectMake(absoluteIndex*width,
-                                        _header.fs_height,
+                                        _header.fs_height + kTopBottomPadding,
                                         width,
                                         height);
     }];
