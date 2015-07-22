@@ -76,7 +76,7 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    _collectionView.frame = CGRectMake(0, self.fs_height*0.1, self.fs_width, self.fs_height*0.9);
+    _collectionView.frame = CGRectMake(0, 0, self.fs_width, self.fs_height);
     _collectionView.contentInset = UIEdgeInsetsZero;
 	_collectionView.backgroundColor = _appearance.headerBackgroundColor; // call this elsewhere
     _collectionViewFlowLayout.itemSize = CGSizeMake(_collectionView.fs_width * 0.5,
