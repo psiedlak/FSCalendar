@@ -349,6 +349,14 @@
     }
 }
 
+- (void)setHeaderDateFormat:(NSString *)headerDateFormat
+{
+    if (![_headerDateFormat isEqual:headerDateFormat]) {
+        _headerDateFormat = headerDateFormat;
+        [_calendar.header reloadData];
+    }
+}
+
 - (void)adjustTitleIfNecessary
 {
     if (_autoAdjustTitleSize) {
